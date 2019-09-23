@@ -12,29 +12,33 @@ const createStyles = ({ variant, theme, options }) => {
         ? radii.none
         : radii.lg;
 
-    const fontSize = options.size === 'sm'
-        ? fontSizes.sm
-        : options.size === 'lg'
-        ? fontSizes.lg
-        : fontSizes.md;
+    const fontSize =
+        options.size === 'sm'
+            ? fontSizes.sm
+            : options.size === 'lg'
+            ? fontSizes.lg
+            : fontSizes.md;
 
-    const fontWeight = options.size === 'sm'
-        ? fontWeights.normal
-        : options.size === 'lg'
+    const fontWeight =
+        options.size === 'sm'
+            ? fontWeights.normal
+            : options.size === 'lg'
             ? fontWeights.bold
             : fontWeights.semibold;
 
-    const px = options.size === 'sm'
-        ? space[6]
-        : options.size === 'lg'
-        ? space[10]
-        : space[8];
+    const px =
+        options.size === 'sm'
+            ? space[3]
+            : options.size === 'lg'
+            ? space[10]
+            : space[6];
 
-    const py = options.size === 'sm'
-        ? space[2]
-        : options.size === 'lg'
-            ? space[6]
-            : space[4];
+    const py =
+        options.size === 'sm'
+            ? space[1]
+            : options.size === 'lg'
+            ? space[4]
+            : space[2];
 
     const baseline = {
         fontSize,
@@ -56,12 +60,16 @@ const createStyles = ({ variant, theme, options }) => {
         bg: colors[colorVariant][500],
         color: colors.white,
         _hover: {
-            background: colors[colorVariant][600]
+            background: colors[colorVariant][600],
         },
         _active: {
             background: colors[colorVariant][700],
             boxShadow: activeBoxShadow,
-        }
+        },
+        _focus: {
+            background: colors[colorVariant][700],
+            boxShadow: activeBoxShadow,
+        },
     });
 
     const createOutlined = colorVariant => ({
@@ -70,24 +78,32 @@ const createStyles = ({ variant, theme, options }) => {
         borderColor: colors[colorVariant][500],
         _hover: {
             color: colors[colorVariant][600],
-            background: colors[colorVariant][50]
+            background: colors[colorVariant][50],
         },
         _active: {
             background: colors[colorVariant][100],
             boxShadow: activeBoxShadow,
-        }
+        },
+        _focus: {
+            background: colors[colorVariant][100],
+            boxShadow: activeBoxShadow,
+        },
     });
 
     const createGhost = colorVariant => ({
         ...baseline,
         color: colors[colorVariant][500],
         _hover: {
-            background: colors[colorVariant][50]
+            background: colors[colorVariant][50],
         },
         _active: {
             background: colors[colorVariant][100],
             boxShadow: activeBoxShadow,
-        }
+        },
+        _focus: {
+            background: colors[colorVariant][100],
+            boxShadow: activeBoxShadow,
+        },
     });
 
     const styles = {

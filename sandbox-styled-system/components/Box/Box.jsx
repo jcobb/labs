@@ -31,6 +31,9 @@ const Box = styled.div`
   &:active {
     ${props => props._active ? {...props._active} : ''}
   }
+  &:focus {
+    ${props => props._focus ? {...props._focus} : ''}
+  }
 `;
 
 export default Box;
